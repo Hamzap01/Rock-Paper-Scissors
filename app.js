@@ -1,11 +1,13 @@
 let userScore = 0;
 let compScore = 0;
+let drawScore = 0;
 
 const choices = document.querySelectorAll(".choice");
 const msg = document.querySelector("#msg");
 
 const userScorePara = document.querySelector("#user-score");
 const compScorePara = document.querySelector("#comp-score");
+const drawScorePara = document.querySelector("#draw-score");
 
 const genCompChoice = () => {
     const options = ["rock", "paper", "scissors"];
@@ -14,6 +16,8 @@ const genCompChoice = () => {
 };
 
 const drawGame = () => {
+    drawScore++;
+    drawScorePara.innerHTML = drawScore;
     msg.innerHTML = "Game was Draw. Play Again!"
     msg.style.backgroundColor = "#081b31";
 };
